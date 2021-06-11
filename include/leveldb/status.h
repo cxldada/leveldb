@@ -30,6 +30,7 @@ class LEVELDB_EXPORT Status {
   Status(const Status& rhs);
   Status& operator=(const Status& rhs);
 
+  // move copy
   Status(Status&& rhs) noexcept : state_(rhs.state_) { rhs.state_ = nullptr; }
   Status& operator=(Status&& rhs) noexcept;
 
